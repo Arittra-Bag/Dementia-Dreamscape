@@ -15,19 +15,15 @@ export default defineConfig(({ mode }) => ({
     componentTagger(),
   ].filter(Boolean),
   resolve: {
-    alias: [
-      {
-        find: "@",
-        replacement: path.resolve(__dirname, "src")
-      }
-    ]
+    alias: {
+      "@": path.resolve(__dirname, "./src")
+    }
   },
   build: {
+    outDir: "dist",
     sourcemap: true,
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html')
-      }
+    commonjsOptions: {
+      transformMixedEsModules: true
     }
   }
 }));
