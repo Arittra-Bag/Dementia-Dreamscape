@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = require('path');
+import path from 'path';
 
 // Ensure lib directory exists
 const libDir = path.join(__dirname, 'src', 'lib');
